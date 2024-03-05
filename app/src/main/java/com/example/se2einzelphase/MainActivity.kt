@@ -37,5 +37,14 @@ class MainActivity : ComponentActivity() {
             serverResponse?.text = stuff.response
 
         })
+
+        //Ex 2
+        buttonSecondEx = findViewById<View>(R.id.buttonSecondEx) as Button?
+        buttonSecondEx?.setOnClickListener(View.OnClickListener {
+            val mnumber = inputField?.text.toString()
+
+            serverResponse?.text = mnumber.split("").sorted().joinToString("").replace(Regex("[2357]"),"")
+
+        })
     }
 }
